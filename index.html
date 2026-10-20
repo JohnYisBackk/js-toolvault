@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- LUCIDE ICONS -->
+    <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <title>ToolVault</title>
+  </head>
+  <body>
+    <!-- ====================================================== -->
+    <!-- HEADER -->
+    <!-- ====================================================== -->
+
+    <header class="header">
+      <a href="#" class="logo">
+        <i data-lucide="boxes"></i>
+
+        <div class="logo-content">
+          <h1>ToolVault</h1>
+          <p>Discover and organize useful developer tools.</p>
+        </div>
+      </a>
+
+      <div class="search-box">
+        <i data-lucide="search"></i>
+
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search tools, categories or keywords..."
+          autocomplete="off"
+        />
+
+        <span class="search-shortcut">Ctrl K</span>
+      </div>
+
+      <button
+        class="theme-btn"
+        id="themeBtn"
+        type="button"
+        aria-label="Theme navigation"
+      >
+        <i data-lucide="sun"></i>
+        <i data-lucide="moon"></i>
+      </button>
+    </header>
+
+    <!-- ====================================================== -->
+    <!-- MAIN -->
+    <!-- ====================================================== -->
+
+    <main>
+      <!-- ====================================================== -->
+      <!-- FILTER SECTION -->
+      <!-- ====================================================== -->
+
+      <section class="filters-section">
+        <div class="filter-buttons">
+          <button class="filter-btn active" data-category="all">All</button>
+
+          <button class="filter-btn" data-category="development">
+            <i data-lucide="code-xml"></i>
+            Development
+          </button>
+
+          <button class="filter-btn" data-category="design">
+            <i data-lucide="palette"></i>
+            Design
+          </button>
+
+          <button class="filter-btn" data-category="productivity">
+            <i data-lucide="square-check"></i>
+            Productivity
+          </button>
+
+          <button class="filter-btn" data-category="ai">
+            <i data-lucide="sparkles"></i>
+            AI
+          </button>
+
+          <button class="filter-btn" data-category="utilities">
+            <i data-lucide="wrench"></i>
+            Utilities
+          </button>
+        </div>
+
+        <div class="sort-wrapper">
+          <i data-lucide="arrow-down-up"></i>
+
+          <select id="sortSelect" aria-label="Sort tools">
+            <option value="popular">Most Popular</option>
+            <option value="rating">Highest Rated</option>
+            <option value="name-asc">Name A–Z</option>
+            <option value="name-desc">Name Z–A</option>
+          </select>
+
+          <i data-lucide="chevron-down"></i>
+        </div>
+      </section>
+
+      <!-- ====================================================== -->
+      <!-- STATS SECTION -->
+      <!-- ====================================================== -->
+
+      <section class="stats-section">
+        <div class="stat-boxes">
+          <!-- TOTAL TOOLS -->
+          <div class="stat-box blue">
+            <i data-lucide="box"></i>
+
+            <div class="stat-content">
+              <h5>Total Tools</h5>
+
+              <div class="stat-content-values">
+                <span id="totalToolsValue">24</span>
+
+                <span class="stat-growth">
+                  <i data-lucide="trending-up"></i>
+                  <span id="totalToolsGrowth">+12%</span>
+                </span>
+              </div>
+
+              <p>New tools this month</p>
+            </div>
+          </div>
+
+          <!-- FAVORITES -->
+          <div class="stat-box red">
+            <i data-lucide="heart"></i>
+
+            <div class="stat-content">
+              <h5>Favorites</h5>
+
+              <div class="stat-content-values">
+                <span id="favoritesValue">0</span>
+
+                <span class="stat-growth">
+                  <span id="favoritesGrowth">+3</span>
+                </span>
+              </div>
+
+              <p>Tools saved by you</p>
+            </div>
+          </div>
+
+          <!-- CATEGORIES -->
+          <div class="stat-box purple">
+            <i data-lucide="layout-grid"></i>
+
+            <div class="stat-content">
+              <h5>Categories</h5>
+
+              <div class="stat-content-values">
+                <span id="categoriesValue">5</span>
+              </div>
+
+              <p>Tool categories</p>
+            </div>
+          </div>
+
+          <!-- FREE TOOLS -->
+          <div class="stat-box cyan">
+            <i data-lucide="users"></i>
+
+            <div class="stat-content">
+              <h5>Free Tools</h5>
+
+              <div class="stat-content-values">
+                <span id="freeToolsValue">18</span>
+                <span id="freeToolsPercent">75%</span>
+              </div>
+
+              <p>Free to use tools</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================== -->
+      <!-- TOOLS GRID SECTION -->
+      <!-- ====================================================== -->
+
+      <section class="tools-section">
+        <span id="resultsCount">Showing 6 of 24 tools</span>
+        <div class="tools-wrapper">
+          <div class="tools-grid" id="toolsGrid">
+            <!-- THIS WILL BE RENDERED IN JS  -->
+          </div>
+        </div>
+
+        <button class="show-more-button" id="showMoreBtn" type="button">
+          <span id="showMoreText">Show More</span>
+          <i data-lucide="chevron-down"></i>
+        </button>
+      </section>
+    </main>
+  </body>
+</html>
